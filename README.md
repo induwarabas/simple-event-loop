@@ -1,4 +1,4 @@
-# simple-event-loop
+# Simple Event Loop
 This is a simple event loop for multi-threaded java application. 
 
 An event loop has its own java Thread and all callbacks are triggered in that thread context. It also contains a transfer queue implementation.
