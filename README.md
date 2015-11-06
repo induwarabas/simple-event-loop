@@ -1,7 +1,7 @@
+# simple-event-loop
 This is a simple event loop for multi-threaded java application. 
 
 An event loop has its own java Thread and all callbacks are triggered in that thread context. It also contains a transfer queue implementation.
-# simple-event-loop
 
 ###Communicating between two threads.
 Communicating between two threads is simple. No locks required.
