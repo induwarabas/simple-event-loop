@@ -1,5 +1,13 @@
 # Simple Event Loop
 This is a simple event loop for multi-threaded java application. 
+Get it from [Maven repository](http://mvnrepository.com/artifact/com.github.induwarabas/event-loop)
+```xml
+<dependency>
+   <groupId>com.github.induwarabas</groupId>
+   <artifactId>event-loop</artifactId>
+   <version>1.0.0</version>
+</dependency>
+```
 
 An event loop has its own java Thread and all callbacks are triggered in that thread context. It also contains a transfer queue implementation.
 
@@ -254,3 +262,5 @@ try {
 	e.printStackTrace();
 }
 ```
+
+If you have any question feel free to contact me induwarabas@gmail.com
