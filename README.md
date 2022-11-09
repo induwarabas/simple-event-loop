@@ -11,7 +11,7 @@ Get it from [Maven repository](http://mvnrepository.com/artifact/com.github.indu
 
 An event loop has its own java Thread and all callbacks are triggered in that thread context. It also contains a transfer queue implementation.
 
-###Communicating between two threads.
+### Communicating between two threads.
 Communicating between two threads is simple. No locks required.
 Here is a sample code to send an object to the event loop.
 ```java
@@ -36,10 +36,10 @@ s1.addEventHandler(new SimpleEventHandler() {
 s1.queue("Hello");
 ```
 
-###Creating timers
+### Creating timers
 You can create timers in both singleShot and repeatable ways.
 
-#####Single Shot timers.
+##### Single Shot timers.
 These timers will call only once and these are not repeatable.
 ```java
 // Creating new event loop
@@ -60,7 +60,7 @@ SimpleTimer timer = s1.createTimer(new SimpleTimerCallback() {
 timer.singleShot(1000);
 ```
 
-#####Repeating timers
+##### Repeating timers
 These timers will repeat until stop it.
 ```java
 // Creating new event loop
@@ -81,11 +81,11 @@ SimpleTimer timer = loop.createTimer(new SimpleTimerCallback() {
 timer.start(1000);
 ```
 
-###Sleeping in events
+### Sleeping in events
 If you call `Thread.sleep` in event callbacks, the event loop will get blocked. All other events will not trigger until you wake. But sometimes you may need to give a change to process another event while sleeping. You can do it by calling the `sleep` function of the event loop.
 See the difference of two scenarios.
 
-#####Scenario 1. Sleeping with Thread.sleep
+##### Scenario 1. Sleeping with Thread.sleep
 ```java
 // Creating new event loop
 SimpleEventLoop loop = new SimpleEventLoop();
@@ -144,7 +144,7 @@ Grrrrr
 ```
 Here timer2 events queued until timer1 wake.
 
-#####Scenario 2. Sleeping with loop.sleep
+##### Scenario 2. Sleeping with loop.sleep
 ```java
 // Creating new event loop
 SimpleEventLoop loop = new SimpleEventLoop();
@@ -196,9 +196,9 @@ I waked in timer 1
 ```
 Here the timer2 events triggered while timer1 is sleeping.
 
-###Network communication
+### Network communication
 You can create a server client application easy using the event loop.
-#####Creating a server
+##### Creating a server
 ```java
 SimpleEventLoop loop = new SimpleEventLoop();
 loop.start();
@@ -233,7 +233,7 @@ try {
 }
 ```
 
-#####Creating a client
+##### Creating a client
 ```java
 SimpleEventLoop loop2 = new SimpleEventLoop();
 loop2.start();
